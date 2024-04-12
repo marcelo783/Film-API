@@ -52,7 +52,11 @@ app.post('/', async (req, res) => {
     return res.send(film)
 })
 
+const DB_USER =  process.env.DB_USER;
+const DB_PASSWORD = encodeURIComponent(process.env.DB_PASSWORD)
+
 app.listen(port, () => {
-    mongoose.connect('mongodb+srv://mercelo:3dMg5n8yA6iTLdbZ@cluster0.oqbkygk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
-    console.log('app  ruinnnf')
+
+    mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.oqbkygk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`);
+    console.log('app  running')
 })
