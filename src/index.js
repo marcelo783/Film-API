@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express')
 const req = require('express/lib/request')
 const res = require('express/lib/response')
@@ -54,6 +55,9 @@ app.post('/', async (req, res) => {
 
 const DB_USER =  process.env.DB_USER;
 const DB_PASSWORD = encodeURIComponent(process.env.DB_PASSWORD)
+
+
+
 
 app.listen(port, () => {
 
